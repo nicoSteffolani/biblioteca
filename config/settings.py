@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,3 +121,55 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+JET_THEMES = [
+    {
+        'theme': 'default', 
+        'color': '#47bac1', 
+        'title': 'Default' 
+    },
+    {
+        'theme': 'green',
+        'color': '#44b78b',
+        'title': 'Green'
+    },
+    {
+        'theme': 'light-green',
+        'color': '#2faa60',
+        'title': 'Light Green'
+    },
+    {
+        'theme': 'light-violet',
+        'color': '#a464c4',
+        'title': 'Light Violet'
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+
+JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
+    {'label': _('General'), 'app_label': 'core', 'items': [
+        {'name': 'help.question'},
+        {'name': 'pages.page', 'label': _('Static page')},
+        {'name': 'city'},
+        {'name': 'validationcode'},
+        {'label': _('Analytics'), 'url': 'http://example.com', 'url_blank': True},
+    ]},
+    {'label': _('Users'), 'items': [
+        {'name': 'core.user'},
+        {'name': 'auth.group'},
+        {'name': 'core.userprofile', 'permissions': ['core.user']},
+    ]},
+    {'app_label': 'banners', 'items': [
+        {'name': 'banner'},
+        {'name': 'bannertype'},
+    ]},
+]
