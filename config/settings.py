@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'libros',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -155,21 +156,3 @@ JET_THEMES = [
     }
 ]
 
-JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
-    {'label': _('General'), 'app_label': 'core', 'items': [
-        {'name': 'help.question'},
-        {'name': 'pages.page', 'label': _('Static page')},
-        {'name': 'city'},
-        {'name': 'validationcode'},
-        {'label': _('Analytics'), 'url': 'http://example.com', 'url_blank': True},
-    ]},
-    {'label': _('Users'), 'items': [
-        {'name': 'core.user'},
-        {'name': 'auth.group'},
-        {'name': 'core.userprofile', 'permissions': ['core.user']},
-    ]},
-    {'app_label': 'banners', 'items': [
-        {'name': 'banner'},
-        {'name': 'bannertype'},
-    ]},
-]
